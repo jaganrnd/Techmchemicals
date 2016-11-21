@@ -26,9 +26,13 @@ let processText = (text, sender)  => {
     let match;
     match = text.match(/help/i);
     if (match) {
-        sendMessage({text:
-            `How can i help you:
-        `}, sender);
+        getUserInfo(sender).then(response => { 
+            
+            sendMessage({text:
+                `Hey ${response.first_name} .... How can i help you:
+            `}, sender);
+            
+        });         
         return;
     }
 
