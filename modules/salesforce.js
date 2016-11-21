@@ -28,7 +28,7 @@ let login = () => {
 
 let findAccount = name => {
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id, Name, BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Name LIKE '%" + name + "%' LIMIT 5";
+        let q = "SELECT Id, Name, BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Title_Cards__c = "Title Card" ";
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject("An error as occurred");
