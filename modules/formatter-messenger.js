@@ -8,15 +8,15 @@ let formatAccounts = accounts => {
             subtitle: account.get("BillingStreet") + ", " + account.get("BillingCity") + " " + account.get("BillingState") + " · " + account.get("Phone"),
             "image_url": account.get("Picture_URL__c"),
             "buttons": [{
-                "type":"postback",
-                "title":"View Contacts",
-                "payload": "view_contacts," + account.getId() + "," + account.get("Name")
-            },{
-                "type": "web_url",
-                "url": "https://login.salesforce.com/" + account.getId(),
-                "title": "Open in Salesforce"
-            },
-]
+                    "type":"postback",
+                    "title":"View",
+                    "payload": "view_contacts," + account.getId() + "," + account.get("Name")
+                    }/*,{
+                    "type": "web_url",
+                    "url": "https://login.salesforce.com/" + account.getId(),
+                    "title": "Open in Salesforce"
+                    },*/
+            ]
         })
     );
     return {
