@@ -50,13 +50,8 @@ let getUserInfo = (userId) => {
 
 //SEARCH REST API - START
 
-let getArticles = (incomingtext) => {
-  
-  console.log('Incoming text for search rest api flow**' + incomingtext);	
-	
-  return new Promise((resolve, reject) => {       
-       
-	
+let getArticles = (incomingtext) => {	
+  return new Promise((resolve, reject) => {              	
         request({
             url: 'https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?q%3Di+need+to+know+my+balance+%26sobject%3DKnowledgeArticleVersion+%26KnowledgeArticleVersion.fields%3DTitle%2CSummary+%26KnowledgeArticleVersion.where+publishstatus%3D%27online%27+and+language%3D%27en_US%27',
             method: 'GET',		
@@ -70,10 +65,8 @@ let getArticles = (incomingtext) => {
                 console.log(response.body);
                 resolve(JSON.parse(response.body));
             }    
-        });
-    
-    });  
-    
+        });    
+    });      
 };
 
 //SEARCH REST API = END
