@@ -145,35 +145,9 @@ let handlePost = (req, res) => {
         } else if (event.message && event.message.text) {
             processText(event.message.text, sender);
             
-            var incomingtext = event.message.text;
-		
+            var incomingtext = event.message.text;		
 	    getArticles(incomingtext);	
-		
-            /*if(incomingtext.includes("price") || incomingtext.includes("shortage") || incomingtext.includes("deposit")){
-               sendMessage({text: `It seems you have issue related to cash!`}, sender);
-                
-               sendMessage({attachment:{
-                                        "type": "template",
-                                        "payload": {
-                                            "template_type":"button",
-                                            "text":"Am i Right?",
-                                            "buttons":[
-                                              {
-                                                "type":"postback",
-                                                "title":"👆 Yes",
-                                                "payload":"Order_More,"
-                                              },
-					                          {
-                                                "type":"postback",
-                                                "title":"👎 No",
-                                                "payload":"No_Enf,"
-                                              }
-                                            ]
-                                        }
-                                    }
-                                }, sender); */
-                
-            }   
+		                          
             
         } else if (event.postback) {
             let payload = event.postback.payload.split(",");
