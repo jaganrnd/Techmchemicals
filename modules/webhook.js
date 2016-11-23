@@ -54,7 +54,8 @@ let getArticles = (incomingtext) => {
   return new Promise((resolve, reject) => {              	
         request({
             url: 'https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?q%3Di+need+to+know+my+balance+%26sobject%3DKnowledgeArticleVersion+%26KnowledgeArticleVersion.fields%3DTitle%2CSummary+%26KnowledgeArticleVersion.where+publishstatus%3D%27online%27+and+language%3D%27en_US%27',
-            method: 'GET',		
+            access_token : '00D28000001xu4j!AQ0AQOSYJYu4r1i__fOFg81HjM4IsKcoC5Qz9CID3ZK9lgtmHd8j5YvlskRmqr.tfoFcrmT17Fy2a1Y8JVhXKS0cGp26JsFH',
+	    method: 'GET',		
         }, (error, response) => {
             if (error) {
                 console.log('Error sending message: ', error);
