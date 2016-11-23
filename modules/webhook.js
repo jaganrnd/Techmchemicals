@@ -123,7 +123,7 @@ let handlePost = (req, res) => {
         } else if (event.message && event.message.text) {
             processText(event.message.text, sender);
             
-            var incomingtext = event.message.text;
+            /*var incomingtext = event.message.text;
             if(incomingtext.includes("price") || incomingtext.includes("shortage") || incomingtext.includes("deposit")){
                sendMessage({text: `It seems you have issue related to cash!`}, sender);
                 
@@ -146,7 +146,7 @@ let handlePost = (req, res) => {
                                             ]
                                         }
                                     }
-                                }, sender); 
+                                }, sender); */
                 
             }   
             
