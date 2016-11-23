@@ -15,7 +15,7 @@ let org = nforce.createConnection({
     autoRefresh: true
 });
 
-//uncomment asap
+
 let login = () => {
     org.authenticate({username: SF_USER_NAME, password: SF_PASSWORD}, err => {
         if (err) {
@@ -28,20 +28,6 @@ let login = () => {
         }
     });
 };
-// uncomment asap
-
-/*let login = () => {
-    org.authenticate({username: SF_USER_NAME, password: SF_PASSWORD}, function(err, resp) => {
-        if (err) {
-            console.error("Authentication error");
-            console.error(err);
-        } else {          
-            console.log("Authentication successful" + org.oauth.access_token );
-            //console.log(org.accessToken);
-            //console.log(org.instanceUrl);
-        }
-    });
-};*/
 
 
 let findAccount = name => {
