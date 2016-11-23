@@ -68,10 +68,10 @@ let org = nforce.createConnection({
 let login = () => {
     org.authenticate({username: SF_USER_NAME, password: SF_PASSWORD}, err => {
         if (err) {
-            console.error("Authentication error");
+            console.error("Authentication error new");
             console.error(err);
         } else {          
-            console.log("Authentication successful" + org.oauth.access_token );
+            console.log("Authentication successful new" + org.oauth.access_token );
             //console.log(org.accessToken);
             //console.log(org.instanceUrl);
         }
