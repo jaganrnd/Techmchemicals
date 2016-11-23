@@ -59,11 +59,11 @@ let getArticles = (incomingtext) => {
 	var kavwhere = 'KnowledgeArticleVersion.where publishstatus=\'online\' and language=\'en_US\';
 	
         request({
-            url: `https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?`,
-            qs: {q:"incomingtext",sobject:'KnowledgeArticleVersion',kavfields:'Title,Summary',kavwhere},
+            url: `https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?q%3Di+need+to+know+my+balance+%26sobject%3DKnowledgeArticleVersion+%26KnowledgeArticleVersion.fields%3DTitle%2CSummary+%26KnowledgeArticleVersion.where+publishstatus%3D%27online%27+and+language%3D%27en_US%27`,
+            //qs: {q:"incomingtext",sobject:'KnowledgeArticleVersion',kavfields:'Title,Summary',kavwhere},
             method: 'GET',
 	    
-	    console.log('query string**' + qs);
+	    console.log('url**' + url);
 		
         }, (error, response) => {
             if (error) {
