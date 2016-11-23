@@ -124,8 +124,30 @@ let handlePost = (req, res) => {
             processText(event.message.text, sender);
             
             var incomingtext = event.message.text;
-            if(incomingtext.includes("Price")){
-               sendMessage({text: `It seems you have issue related to cash?.`}, sender);
+            if(incomingtext.includes("price") || incomingtext.includes("shortage") || incomingtext.includes("deposit")){
+               sendMessage({text: `It seems you have issue related to cash!`}, sender);
+                
+               sendMessage({attachment:{
+                                        "type": "template",
+                                        "payload": {
+                                            "template_type":"button",
+                                            "text":"Am i Right?",
+                                            "buttons":[
+                                              {
+                                                "type":"postback",
+                                                "title":"👆 Yes",
+                                                "payload":"Order_More,"
+                                              },
+					                          {
+                                                "type":"postback",
+                                                "title":"👎 No",
+                                                "payload":"No_Enf," + opportunityId
+                                              }
+                                            ]
+                                        }
+                                    }
+                                }, sender); 
+                
             }   
             
         } else if (event.postback) {
