@@ -55,10 +55,12 @@ let getArticles = (incomingtext) => {
   console.log('Incoming text for search rest api flow**' + incomingtext);	
 	
   return new Promise((resolve, reject) => {       
-    
+        var kavfields = 'KnowledgeArticleVersion.fields'
+	var kavwhere = 'KnowledgeArticleVersion.where publishstatus=\'online\' and language=\'en_US\';
+	
         request({
             url: `https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?`,
-            qs: {q:"incomingtext",sobject:'KnowledgeArticleVersion',KnowledgeArticleVersion%2Efields:'Title,Summary',KnowledgeArticleVersion.where publishstatus='online' and language='en_US'"},
+            qs: {q:"incomingtext",sobject:'KnowledgeArticleVersion',kavfields:'Title,Summary',kavwhere},
             method: 'GET',
 	    
 	    console.log('query string**' + qs);
