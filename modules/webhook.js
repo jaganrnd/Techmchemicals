@@ -122,6 +122,12 @@ let handlePost = (req, res) => {
             sendMessage({text: `Sorry I'm taking a break right now.`}, sender);
         } else if (event.message && event.message.text) {
             processText(event.message.text, sender);
+            
+            var incomingtext = event.message.text;
+            if(incomingtext.includes("Price")){
+               sendMessage({text: `It seems you have issue related to cash?.`}, sender);
+            }   
+            
         } else if (event.postback) {
             let payload = event.postback.payload.split(",");
             if (payload[0] === "view_contacts") {
