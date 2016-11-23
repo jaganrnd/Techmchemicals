@@ -93,6 +93,7 @@ let getArticles = (incomingtext) => {
                 reject(error);
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
+		console.log('Req body1**' + request.body);  
             } else {
                 console.log(response.body);
                 resolve(JSON.parse(response.body));
