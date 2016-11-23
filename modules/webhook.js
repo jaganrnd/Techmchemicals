@@ -141,7 +141,7 @@ let handlePost = (req, res) => {
 					                          {
                                                 "type":"postback",
                                                 "title":"👎 No",
-                                                "payload":"No_Enf," + opportunityId
+                                                "payload":"No_Enf,"
                                               }
                                             ]
                                         }
