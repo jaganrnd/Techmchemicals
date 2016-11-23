@@ -21,7 +21,7 @@ let login = () => {
             console.error("Authentication error");
             console.error(err);
         } else {          
-            console.log("Authentication successful" + JSON.parse(org));
+            console.log("Authentication successful" + resp.body);
             //console.log(org.accessToken);
             //console.log(org.instanceUrl);
         }
