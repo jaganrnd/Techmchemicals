@@ -58,7 +58,7 @@ let getArticles = (incomingtext) => {
     
         request({
             url: `https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?`,
-            qs: {q:"incomingtext",sobject:"KnowledgeArticleVersion",KnowledgeArticleVersion.fields:"Title,Summary",KnowledgeArticleVersion.where publishstatus='online' and language='en_US'},
+            qs: {q:"incomingtext",sobject:"KnowledgeArticleVersion",KnowledgeArticleVersion.fields:"Title,Summary KnowledgeArticleVersion.where publishstatus='online' and language='en_US'"},
             method: 'GET',
 	    
 	    console.log('query string**' + qs);
