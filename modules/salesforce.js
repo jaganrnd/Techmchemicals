@@ -21,7 +21,7 @@ let login = () => {
             console.error("Authentication error");
             console.error(err);
         } else {
-            console.log("Authentication successful");
+            console.log("Authentication successful" + org);
         }
     });
 };
