@@ -21,7 +21,11 @@ let login = () => {
             console.error("Authentication error");
             console.error(err);
         } else {
-            console.log("Authentication successful" + JSON.resolve(org) );
+            console.log("Authentication successful");
+            console.log(org.accessToken);
+            console.log(org.instanceUrl);
+            console.log("User ID: " + org.id);
+            console.log("Org ID: " + org.organizationId);
         }
     });
 };
