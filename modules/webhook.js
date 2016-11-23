@@ -89,6 +89,7 @@ let getArticles = (incomingtext) => {
         }, (error, response) => {
             if (error) {
                 console.log('Error sending message: ', error);
+		console.log('Req body**' + request.body);    
                 reject(error);
             } else if (response.body.error) {
                 console.log('Error: ', response.body.error);
