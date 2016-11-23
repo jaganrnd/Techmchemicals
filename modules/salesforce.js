@@ -20,12 +20,10 @@ let login = () => {
         if (err) {
             console.error("Authentication error");
             console.error(err);
-        } else {
+        } else {          
             console.log("Authentication successful" + JSON.parse(org));
-            console.log(org.accessToken);
-            console.log(org.instanceUrl);
-            console.log("User ID: " + org.id);
-            console.log("Org ID: " + org.organizationId);
+            //console.log(org.accessToken);
+            //console.log(org.instanceUrl);
         }
     });
 };
