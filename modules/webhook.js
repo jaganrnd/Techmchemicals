@@ -145,8 +145,8 @@ let handlePost = (req, res) => {
         } else if (event.message && event.message.text) {
             processText(event.message.text, sender);
             
-            var incomingtext = event.message.text;		
-	    getArticles(incomingtext);	
+            //var incomingtext = event.message.text;		
+	    //getArticles(incomingtext);	
 		                          
             
         } else if (event.postback) {
