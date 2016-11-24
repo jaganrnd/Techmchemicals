@@ -10,7 +10,7 @@ let formatAccounts = accounts => {
             "buttons": [{
                     "type":"postback",
                     "title":"View",
-                    "payload": "view_contacts," + account.getId() + "," + account.get("Name")
+                    "payload": "view_contacts," + account.getId() + "," + account.get("Name") + "," + account.get("Type")
                     }/*,{
                     "type": "web_url",
                     "url": "https://login.salesforce.com/" + account.getId(),
