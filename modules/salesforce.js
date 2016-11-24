@@ -66,7 +66,7 @@ let findAccount = name => {
         let q = "FIND {Joe} IN Name Fields RETURNING lead";
         org.query({query: q}, (err, resp) => {
             if (err) {
-                reject("An error as occurred");
+                reject("An error as occurred"+err);
             } else if (resp.records && resp.records.length>0) {
                 let accounts = resp.records;
                 resolve(accounts);
