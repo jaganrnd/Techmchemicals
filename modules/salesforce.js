@@ -96,7 +96,7 @@ let findContactsByAccount = incomingarticletype => {
     console.log('inc art**' + 	incomingarticletype);
 	
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and articletype = incomingarticletype '+'__kav ";
+        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and articletype = incomingarticletype + '\'__kav\'' ";
         console.log('query**' + q);
 	org.query({query: q}, (err, resp) => {
             if (err) {
