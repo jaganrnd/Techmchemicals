@@ -125,8 +125,12 @@ let handlePost = (req, res) => {
             var incomingtext = event.message.text;		
 	    //salesforce.findAccount(incomingtext);	
 	   if (event.message.quick_reply){		
-		var quickpayload0=JSON.parse(event.message.quick_reply.payload);;
-		console.log('Quick Replies payload**' + quickpayload0.PrevMenuSelection);	   
+		
+		var quickpayload1 =JSON.parse(event.message.quick_reply.payload);    
+		console.log('Quick Replies payload KEY PARSING12**' + quickpayload1.PrevMenuSelection);		   
+		   
+		var prevProduct = quickpayload1.PrevMenuSelection;
+		console.log('Quick Reply Payload PRODUCTID**' + prevProduct); 	   
 	   }			                          
             
         }else if (event.postback) {
