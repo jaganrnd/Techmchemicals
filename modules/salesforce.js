@@ -94,8 +94,9 @@ let findContact = name => {
 let findContactsByAccount = incomingarticletype => {
 
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and articletype = incomingarticletype + '__kav' ";
-        org.query({query: q}, (err, resp) => {
+        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and articletype = incomingarticletype+'__kav' ";
+        console.log('query**' + q);
+	org.query({query: q}, (err, resp) => {
             if (err) {
                 reject("An error as occurred");
             } else if (resp.records && resp.records.length>0) {
