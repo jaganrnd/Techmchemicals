@@ -48,61 +48,6 @@ let getUserInfo = (userId) => {
     
 };
 
-//JAGA
-let nforce = require('nforce'),
-
-    SF_CLIENT_ID = process.env.SF_CLIENT_ID,
-    SF_CLIENT_SECRET = process.env.SF_CLIENT_SECRET,
-    SF_USER_NAME = process.env.SF_USER_NAME,
-    SF_PASSWORD = process.env.SF_PASSWORD;
-
-let org = nforce.createConnection({
-    clientId: SF_CLIENT_ID,
-    clientSecret: SF_CLIENT_SECRET,
-    redirectUri: 'http://localhost:3000/oauth/_callback',
-    mode: 'single',
-    autoRefresh: true
-});
-
-
-let login = () => {
-    org.authenticate({username: SF_USER_NAME, password: SF_PASSWORD}, err => {
-        if (err) {
-            console.error("Authentication error new");
-            console.error(err);
-        } else {          
-            console.log("Authentication successful new" + org.oauth.access_token );
-            //console.log(org.accessToken);
-            //console.log(org.instanceUrl);
-        }
-    });
-};
-//JAGA
-
-//SEARCH REST API - START
-let getArticles = (incomingtext) => {	
-  return new Promise((resolve, reject) => {              	
-        request({
-            url: 'https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?q%3Di+need+to+know+my+balance+%26sobject%3DKnowledgeArticleVersion+%26KnowledgeArticleVersion.fields%3DTitle%2CSummary+%26KnowledgeArticleVersion.where+publishstatus%3D%27online%27+and+language%3D%27en_US%27',
-            Authorization : org.oauth.access_token,
-	    method: 'GET',		
-        }, (error, response) => {
-            if (error) {
-                console.log('Error sending message: ', error);
-		console.log('Req body**' + request.body);    
-                reject(error);
-            } else if (response.body.error) {
-                console.log('Error: ', response.body.error);
-		console.log('Req body1**' + request.body);  
-            } else {
-                console.log(response.body);
-                resolve(JSON.parse(response.body));
-            }    
-        });    
-    });      
-};
-//SEARCH REST API = END
-
 let processText = (text, sender)  => {
     let match;
     match = text.match(/help/i);
