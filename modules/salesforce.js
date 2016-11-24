@@ -60,8 +60,6 @@ let getArticles = (incomingtext) => {
 };
 //SEARCH REST API = END
 
-
-
 let findAccount = name => {
     return new Promise((resolve, reject) => {
         let q = "SELECT Id, Name,Description,BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Type = 'Title Card' ";
