@@ -132,11 +132,12 @@ let handlePost = (req, res) => {
                 sendMessage({text: "Ok, lisiting down list of solutions related to - " + payload[2] + "-"}, sender);
 		    
 		console.log('payload[2]**' + payload[2]);    
-		salesforce.findContactsByAccount(payload[2]);
+		//salesforce.findArticlesByType(payload[2]);
 		    
-                /*salesforce.findContactsByAccount(payload[2]).then(contacts => 
-			sendMessage(formatter.formatContacts(contacts), sender)
-		);*/
+                salesforce.findArticlesByType(payload[2]).then(KnowledgeArticleVersion => 
+			sendMessage(formatter.formatarticletitles(KnowledgeArticleVersion), sender)
+		);
+		    
             } else if (payload[0] === "close_won") {
                 sendMessage({text: `OK, I closed the opportunity "${payload[2]}" as "Close Won". Way to go Christophe!`}, sender);
             } else if (payload[0] === "close_lost") {
