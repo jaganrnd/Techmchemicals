@@ -134,7 +134,7 @@ let handlePost = (req, res) => {
 		console.log('payload[2]**' + payload[2]);    
 		//salesforce.findArticlesByType(payload[2]);
 		    
-                salesforce.findArticlesByType(payload[2]).then(KnowledgeArticleVerType => 
+                salesforce.findArticlesByType(payload[2]).then(KnowledgeArticleVersions => 
 			sendMessage(formatter.formatarticletitles(KnowledgeArticleVersions), sender)
 		);
 		    
