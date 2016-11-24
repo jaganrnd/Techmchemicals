@@ -30,14 +30,14 @@ let formatAccounts = accounts => {
     };
 };
 
-let formatarticletitles = KnowledgeArticleVersion => {
+let formatarticletitles = KnowledgeArticleVersions => {
     let elements = [];
     
     var obj = { 'PrevMenuSelection': KnowledgeArticleVersion.get("Id") };	
     var shouldSend = JSON.stringify(obj);
     console.log( 'After Stringify**' +  shouldSend );  
     
-    KnowledgeArticleVersion.forEach(KnowledgeArticleVersion => {
+    KnowledgeArticleVersions.forEach(KnowledgeArticleVersion => {
            elements.push({
                     "content_type":"text",
                     "title": KnowledgeArticleVersion.get("Id"),
