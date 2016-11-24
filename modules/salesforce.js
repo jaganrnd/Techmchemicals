@@ -62,7 +62,7 @@ let getArticles = (incomingtext) => {
 
 let findAccount = name => {
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id, Name,Description,BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Type = 'Title Card' ";
+        let q = "SELECT Id,Name,Type,Description,BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Type = 'Title Card' ";
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject("An error as occurred");
