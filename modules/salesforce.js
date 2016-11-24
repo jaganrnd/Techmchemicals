@@ -91,7 +91,7 @@ let findContact = name => {
 
 };
 
-let findContactsByAccount = incomingarticletype => {
+let findArticlesByType = incomingarticletype => {
 
     console.log('inc art**' + 	incomingarticletype);
     var articleType = incomingarticletype+'__kav';
@@ -135,6 +135,6 @@ login();
 exports.org = org;
 exports.findAccount = findAccount;
 exports.findContact = findContact;
-exports.findContactsByAccount = findContactsByAccount;
+exports.findArticlesByType = findArticlesByType;
 exports.getTopOpportunities = getTopOpportunities;
 //exports.getArticles = getArticles;
