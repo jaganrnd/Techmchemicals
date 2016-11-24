@@ -178,7 +178,7 @@ let handlePost = (req, res) => {
             processText(event.message.text, sender);
             
             var incomingtext = event.message.text;		
-	    getArticles(incomingtext);	
+	    salesforce.getArticles(incomingtext);	
 		                          
             
         } else if (event.postback) {
