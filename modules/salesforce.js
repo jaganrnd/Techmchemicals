@@ -37,11 +37,11 @@ let login = () => {
 //SEARCH REST API - START
 let getArticles = (incomingtext) => {	
   return new Promise((resolve, reject) => {   
-	console.log("123*"+org.oauth.access_token);
+	console.log('Bearer '+org.oauth.access_token);
         request({
             url: 'https://ap2.salesforce.com/services/data/v36.0/parameterizedSearch/?q%3Di+need+to+know+my+balance+%26sobject%3DKnowledgeArticleVersion+%26KnowledgeArticleVersion.fields%3DTitle%2CSummary+%26KnowledgeArticleVersion.where+publishstatus%3D%27online%27+and+language%3D%27en_US%27',
             
-		Authorization : 'OAuth '+org.oauth.access_token,
+		Authorization : 'Bearer '+org.oauth.access_token,
 	        method: 'GET',		
         }, (error, response) => {
             if (error) {
