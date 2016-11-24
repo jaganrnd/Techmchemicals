@@ -130,6 +130,8 @@ let handlePost = (req, res) => {
             let payload = event.postback.payload.split(",");
             if (payload[0] === "list_articletype") {
                 sendMessage({text: "Ok, lisiting down list of solutions related to - " + payload[2] + "-"}, sender);
+		    
+		console.log('payload[2]**' + payload[2]);    
 		salesforce.findContactsByAccount(payload[2]);
 		    
                 /*salesforce.findContactsByAccount(payload[2]).then(contacts => 
