@@ -91,16 +91,17 @@ let findContact = name => {
 
 };
 
-let findContactsByAccount = accountId => {
+let findContactsByAccount = incomingarticletype => {
 
     return new Promise((resolve, reject) => {
-        let q = "SELECT Id, Name, Title, Account.Name, Phone, MobilePhone, Email, Picture_URL__c FROM Contact WHERE Account.Id = '" + accountId + "' LIMIT 5";
+        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and articletype = incomingarticletype + '__kav' ";
         org.query({query: q}, (err, resp) => {
             if (err) {
                 reject("An error as occurred");
             } else if (resp.records && resp.records.length>0) {
-                let contacts = resp.records;
-                resolve(contacts);
+		console.log('resp.records.length**' + resp.records.length);  
+                let KnowledgeArticleVersion = resp.records;
+                resolve(KnowledgeArticleVersion);
             }
         });
     });
