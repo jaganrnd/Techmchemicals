@@ -30,34 +30,25 @@ let formatAccounts = accounts => {
     };
 };
 
-let formatContacts = contacts => {
+let formatarticletitles = KnowledgeArticleVersion => {
     let elements = [];
-    contacts.forEach(contact => {
-        elements.push({
-            title: contact.get("Name"),
-            subtitle: contact.get("Title") + " at " + contact.get("Account").Name + " · " + contact.get("MobilePhone"),
-            "image_url": contact.get("Picture_URL__c"),
-            "buttons": [
-                {
-                    "type": "postback",
-                    "title": "View Notes",
-                    "payload": "view_notes," + contact.getId() + "," + contact.get("Name")
-                },
-                {
-                    "type": "web_url",
-                    "url": "https://login.salesforce.com/" + contact.getId(),
-                    "title": "Open in Salesforce"
-                }]
-        })
+    
+    var obj = { 'PrevMenuSelection': KnowledgeArticleVersion.get("Id") };	
+    var shouldSend = JSON.stringify(obj);
+    console.log( 'After Stringify**' +  shouldSend );  
+    
+    KnowledgeArticleVersion.forEach(KnowledgeArticleVersion => {
+           elements.push({
+                    "content_type":"text",
+                    "title":KnowledgeArticleVersion.get("title"),
+                    //"payload":"Save_Order," + SelectedMenu[0].get("Product__c") + "," + SelectedMenu[0].get("Quantity__c") + "," + SelectedMenu[0].get("Price__c")		
+                    "payload":shouldSend 		
+                
+           });
     });
     return {
-        "attachment": {
-            "type": "template",
-            "payload": {
-                "template_type": "generic",
-                "elements": elements
-            }
-        }
+        "text": "Please choose your related issue",    
+         "quick_replies": elements
     };
 };
 
@@ -98,5 +89,5 @@ let formatOpportunities = opportunities => {
 };
 
 exports.formatAccounts = formatAccounts;
-exports.formatContacts = formatContacts;
+exports.formatarticletitles = formatarticletitles;
 exports.formatOpportunities = formatOpportunities;
