@@ -104,8 +104,8 @@ let findArticlesByType = incomingarticletype => {
                 reject("An error as occurred");
             } else if (resp.records && resp.records.length>0) {
 		console.log('resp.records.length**' + resp.records.length);  
-                let KnowledgeArticleVersion = resp.records;
-                resolve(KnowledgeArticleVersion);
+                let KnowledgeArticleVersions = resp.records;
+                resolve(KnowledgeArticleVersions);
             }
         });
     });
