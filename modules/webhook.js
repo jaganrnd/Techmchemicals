@@ -122,10 +122,11 @@ let handlePost = (req, res) => {
         } else if (event.message && event.message.text) {
             processText(event.message.text, sender);
             
-            var incomingtext = event.message.text;		
-	    //salesforce.findAccount(incomingtext);	
-	   if (event.message.quick_reply){		
-		
+           //var incomingtext = event.message.text;		
+
+	   if (event.message.quick_reply){	
+		   
+		console.log('inside q r payload**');
 		var quickpayload1 =JSON.parse(event.message.quick_reply.payload);    
 		console.log('Quick Replies payload KEY PARSING12**' + quickpayload1.PrevMenuSelection);		   
 		   
