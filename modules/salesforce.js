@@ -1,5 +1,9 @@
 "use strict";
 
+let request = require('request'),
+    salesforce = require('./salesforce'),
+    formatter = require('./formatter-messenger');
+
 let nforce = require('nforce'),
 
     SF_CLIENT_ID = process.env.SF_CLIENT_ID,
