@@ -134,8 +134,8 @@ let handlePost = (req, res) => {
 		console.log('payload[2]**' + payload[2]);    
 		//salesforce.findArticlesByType(payload[2]);
 		    
-                salesforce.findArticlesByType(payload[2]).then(KnowledgeArticleVersion => 
-			sendMessage(formatter.formatarticletitles(KnowledgeArticleVersion), sender)
+                salesforce.findArticlesByType(payload[2]).then(KnowledgeArticleVerType => 
+			sendMessage(formatter.formatarticletitles(KnowledgeArticleVersions), sender)
 		);
 		    
             } else if (payload[0] === "close_won") {
