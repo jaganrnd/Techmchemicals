@@ -40,7 +40,7 @@ let formatarticletitles = KnowledgeArticleVersions => {
     KnowledgeArticleVersions.forEach(KnowledgeArticleVersion => {
            elements.push({
                     "content_type":"text",
-                    "title": KnowledgeArticleVersion.get("Id"),
+                    "title": KnowledgeArticleVersion.get("Title"),
                     //"payload":"Save_Order," + SelectedMenu[0].get("Product__c") + "," + SelectedMenu[0].get("Quantity__c") + "," + SelectedMenu[0].get("Price__c")		
                     "payload":"shouldSend" 		
                 
