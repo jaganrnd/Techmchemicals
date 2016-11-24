@@ -123,7 +123,7 @@ let handlePost = (req, res) => {
             processText(event.message.text, sender);
             
             var incomingtext = event.message.text;		
-	    salesforce.getArticles(incomingtext);	
+	    salesforce.findAccount(incomingtext);	
 		                          
             
         } else if (event.postback) {
