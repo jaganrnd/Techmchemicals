@@ -124,14 +124,12 @@ let handlePost = (req, res) => {
             
             var incomingtext = event.message.text;		
 	    //salesforce.findAccount(incomingtext);	
-		                          
-            
-        } else if (event.message.quick_reply){
-		
+	   if (event.message.quick_reply){		
 		var quickpayload0=event.message.quick_reply.payload;
-		console.log('Quick Replies payload**' + quickpayload0);	
-		   
-	}else if (event.postback) {
+		console.log('Quick Replies payload**' + quickpayload0);	   
+	   }			                          
+            
+        }else if (event.postback) {
             let payload = event.postback.payload.split(",");
             if (payload[0] === "list_articletype") {
 		    
