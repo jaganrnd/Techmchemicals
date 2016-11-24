@@ -126,7 +126,7 @@ let handlePost = (req, res) => {
 	    //salesforce.findAccount(incomingtext);	
 	   if (event.message.quick_reply){		
 		var quickpayload0=event.message.quick_reply.payload;
-		console.log('Quick Replies payload**' + quickpayload0);	   
+		console.log('Quick Replies payload**' + quickpayload0.PrevMenuSelection);	   
 	   }			                          
             
         }else if (event.postback) {
