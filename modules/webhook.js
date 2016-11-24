@@ -129,7 +129,7 @@ let handlePost = (req, res) => {
         } else if (event.postback) {
             let payload = event.postback.payload.split(",");
             if (payload[0] === "list_articletype") {
-                sendMessage({text: "Ok, lisiting down list of solutions related to - " + payload[2] + "-"}, sender);
+                sendMessage({text: "Ok, lisiting down list of solutions related to <- " + payload[2] + "->"}, sender);
 		    
 		console.log('payload[2]**' + payload[2]);    
 		//salesforce.findArticlesByType(payload[2]);
