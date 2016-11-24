@@ -34,7 +34,7 @@ let login = () => {
 };
 
 
-//SEARCH REST API - START
+/*//SEARCH REST API - START
 let getArticles = (incomingtext) => {	
   return new Promise((resolve, reject) => {   
 	console.log('Bearer '+org.oauth.access_token);
@@ -58,7 +58,7 @@ let getArticles = (incomingtext) => {
         });    
     });      
 };
-//SEARCH REST API = END
+//SEARCH REST API = END*/
 
 let findAccount = name => {
     return new Promise((resolve, reject) => {
@@ -132,4 +132,4 @@ exports.findAccount = findAccount;
 exports.findContact = findContact;
 exports.findContactsByAccount = findContactsByAccount;
 exports.getTopOpportunities = getTopOpportunities;
-exports.getArticles = getArticles;
+//exports.getArticles = getArticles;
