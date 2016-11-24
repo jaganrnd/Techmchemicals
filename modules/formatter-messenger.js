@@ -38,6 +38,9 @@ let formatarticletitles = KnowledgeArticleVersions => {
     //console.log( 'After Stringify**' +  shouldSend );  
     
     KnowledgeArticleVersions.forEach(KnowledgeArticleVersion => {
+     var obj = { 'PrevMenuSelection': KnowledgeArticleVersion.get("Id") };	
+     var shouldSend = JSON.stringify(obj);
+     console.log( 'After Stringify**' +  shouldSend );  
            elements.push({
                     "content_type":"text",
                     "title": KnowledgeArticleVersion.get("Title"),
