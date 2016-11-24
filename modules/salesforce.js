@@ -61,12 +61,13 @@ let getArticles = (incomingtext) => {
 //SEARCH REST API = END
 
 
+
 let findAccount = name => {
     return new Promise((resolve, reject) => {
-        let q = "FIND {Joe} IN Name Fields RETURNING lead";
+        let q = "SELECT Id, Name,Description,BillingStreet, BillingCity, BillingState, Picture_URL__c, Phone FROM Account WHERE Type = 'Title Card' ";
         org.query({query: q}, (err, resp) => {
             if (err) {
-                reject("An error as occurred"+err);
+                reject("An error as occurred");
             } else if (resp.records && resp.records.length>0) {
                 let accounts = resp.records;
                 resolve(accounts);
