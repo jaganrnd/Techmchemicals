@@ -130,7 +130,9 @@ let handlePost = (req, res) => {
             let payload = event.postback.payload.split(",");
             if (payload[0] === "list_articletype") {
                 sendMessage({text: "Ok, lisiting down list of solutions related to - " + payload[2] + "-"}, sender);
-                //salesforce.findContactsByAccount(payload[1]).then(contacts => sendMessage(formatter.formatContacts(contacts), sender));
+                salesforce.findContactsByAccount(payload[2]).then(contacts => 
+			//sendMessage(formatter.formatContacts(contacts), sender)
+		);
             } else if (payload[0] === "close_won") {
                 sendMessage({text: `OK, I closed the opportunity "${payload[2]}" as "Close Won". Way to go Christophe!`}, sender);
             } else if (payload[0] === "close_lost") {
