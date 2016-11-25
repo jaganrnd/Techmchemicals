@@ -131,7 +131,13 @@ let handlePost = (req, res) => {
 		console.log('Quick Replies payload KEY PARSING12**' + quickpayload1.PrevMenuSelection);		   
 		   
 		var prevProduct = quickpayload1.PrevMenuSelection;
-		console.log('Quick Reply Payload PRODUCTID**' + prevProduct); 	   
+		console.log('Quick Reply Payload PRODUCTID**' + prevProduct); 
+		
+		//Based on title ,display corresponding summary..   
+		salesforce.findParticularArticleSummary(prevProduct).then(KnowledgeArticleSummary => {    
+                            sendMessage(formatter.formatOpenBranches(KnowledgeArticleSummary), sender);  
+                }); 
+		   
 	   }			                          
             
         }else if (event.postback) {
