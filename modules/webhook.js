@@ -55,7 +55,7 @@ let processText = (text, sender)  => {
         getUserInfo(sender).then(response => { 
             
             sendMessage({text:
-                `Hey ${response.first_name} ! 
+                `Hey ${response.first_name} ! 🛃
                  How can i help you today ?                 
             `}, sender);
             
