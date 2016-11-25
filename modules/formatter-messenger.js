@@ -57,9 +57,9 @@ let formatarticlesummary = KnowledgeArticleSummary => {
     KnowledgeArticleSummary.forEach(KnowledgeArticleVersion => { 
     
     return {
-        "text": KnowledgeArticleVersion.get("Summary"),   
+        "text": KnowledgeArticleVersion.get("Summary") 
     };
-    );    
+    });    
 };
 
 let formatOpportunities = opportunities => {
