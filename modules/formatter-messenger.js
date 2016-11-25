@@ -52,6 +52,16 @@ let formatarticletitles = KnowledgeArticleVersions => {
 
 
 
+let formatarticlesummary = KnowledgeArticleSummary => {
+  
+    KnowledgeArticleSummary.forEach(KnowledgeArticleVersion => { 
+    
+    return {
+        "text": KnowledgeArticleVersion.get("Summary"),   
+    };
+    );    
+};
+
 let formatOpportunities = opportunities => {
     let elements = [];
     opportunities.forEach(opportunity =>
@@ -90,5 +100,5 @@ let formatOpportunities = opportunities => {
 
 exports.formatAccounts = formatAccounts;
 exports.formatarticletitles = formatarticletitles;
-exports.articlesummary = articlesummary;
+exports.formatarticlesummary = formatarticlesummary;
 exports.formatOpportunities = formatOpportunities;
