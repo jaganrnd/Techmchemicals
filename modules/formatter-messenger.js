@@ -54,12 +54,10 @@ let formatarticletitles = KnowledgeArticleVersions => {
 
 let formatarticlesummary = KnowledgeArticleSummary => {
   
-    KnowledgeArticleSummary.forEach(KnowledgeArticleVersion => { 
     
     return {
-        "text": KnowledgeArticleVersion.get("Summary") 
+        "text": KnowledgeArticleSummary[0].get("Summary") 
     };
-    });    
 };
 
 let formatOpportunities = opportunities => {
