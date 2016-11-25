@@ -136,5 +136,6 @@ exports.org = org;
 exports.findAccount = findAccount;
 exports.findContact = findContact;
 exports.findArticlesByType = findArticlesByType;
+exports.findParticularArticleSummary = findParticularArticleSummary;
 exports.getTopOpportunities = getTopOpportunities;
 //exports.getArticles = getArticles;
