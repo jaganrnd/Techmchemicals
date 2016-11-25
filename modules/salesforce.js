@@ -112,6 +112,28 @@ let findArticlesByType = incomingarticletype => {
 
 };
 
+
+let findParticularArticleSummary = incomingarticleid => {
+
+    console.log('inc art**' + 	incomingarticletype);
+    var articleType = incomingarticletype+'__kav';
+	
+    return new Promise((resolve, reject) => {
+        let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and id = '"+incomingarticleid+"' ";
+        console.log('query**' + q);
+	org.query({query: q}, (err, resp) => {
+            if (err) {
+                reject("An error as occurred");
+            } else if (resp.records && resp.records.length>0) {
+		console.log('resp.records.length**' + resp.records.length);  
+                let KnowledgeArticleSummary = resp.records;
+                resolve(KnowledgeArticleSummary);
+            }
+        });
+    });
+
+};
+
 let getTopOpportunities = count => {
 
     count = count || 5;
