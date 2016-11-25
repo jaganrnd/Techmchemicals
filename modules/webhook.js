@@ -135,7 +135,7 @@ let handlePost = (req, res) => {
 		
 		//Based on title ,display corresponding summary..   
 		salesforce.findParticularArticleSummary(prevProduct).then(KnowledgeArticleSummary => {    
-                            sendMessage(formatter.formatOpenBranches(KnowledgeArticleSummary), sender);  
+                            sendMessage(formatter.formatarticlesummary(KnowledgeArticleSummary), sender);  
                 }); 
 		   
 	   }			                          
