@@ -31,12 +31,7 @@ let formatAccounts = accounts => {
 };
 
 let formatarticletitles = KnowledgeArticleVersions => {
-    let elements = [];
-    
-    //var obj = { 'PrevMenuSelection': KnowledgeArticleVersion.get("Id") };	
-    //var shouldSend = JSON.stringify(obj);
-    //console.log( 'After Stringify**' +  shouldSend );  
-    
+    let elements = [];   
     KnowledgeArticleVersions.forEach(KnowledgeArticleVersion => {
      var obj = { 'PrevMenuSelection': KnowledgeArticleVersion.get("Id") };	
      var shouldSend = JSON.stringify(obj);
@@ -54,6 +49,8 @@ let formatarticletitles = KnowledgeArticleVersions => {
          "quick_replies": elements
     };
 };
+
+
 
 let formatOpportunities = opportunities => {
     let elements = [];
@@ -93,4 +90,5 @@ let formatOpportunities = opportunities => {
 
 exports.formatAccounts = formatAccounts;
 exports.formatarticletitles = formatarticletitles;
+exports.articlesummary = articlesummary;
 exports.formatOpportunities = formatOpportunities;
