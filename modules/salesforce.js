@@ -115,8 +115,7 @@ let findArticlesByType = incomingarticletype => {
 
 let findParticularArticleSummary = incomingarticleid => {
 
-    console.log('inc art**' + 	incomingarticletype);
-    var articleType = incomingarticletype+'__kav';
+    console.log('incomingarticleid**' + incomingarticleid);
 	
     return new Promise((resolve, reject) => {
         let q = "SELECT Id,title,summary,articletype from KnowledgeArticleVersion where publishstatus='online' and language='en_US' and id = '"+incomingarticleid+"' ";
