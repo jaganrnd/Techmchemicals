@@ -63,7 +63,7 @@ let processText = (text, sender)  => {
             }, sender);
 		
             sendMessage({text:
-                `Hey ${response.first_name} ! Welcome to Chveron Support Center..
+                `Hey ${response.first_name} ! Welcome to Chevron Support Center..
                  How can i help you today ?                 
             `}, sender);
 		
