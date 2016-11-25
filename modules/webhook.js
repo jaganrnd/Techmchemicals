@@ -59,6 +59,15 @@ let processText = (text, sender)  => {
                  How can i help you today ?                 
             `}, sender);
             
+	    sendMessage({attachment:{
+                            "type": "image",
+                            "payload": {                                
+                                "url":"https://www.chevron.com/-/media/chevron/shared/images/chevron-hallmark-facebook.jpg"
+                                
+                            }
+                        }
+            }, sender);
+		
             salesforce.findAccount(match[1]).then(accounts => {
                 sendMessage({text: `Please find below the topics for which i can provide solutions:`}, sender);
                 sendMessage(formatter.formatAccounts(accounts), sender)
